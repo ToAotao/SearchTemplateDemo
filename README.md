@@ -1,12 +1,12 @@
 # SearchTemplate Demo
 
-To make use of Elastic Search Template in Java backend API
+To make use of Elastic Search Template in Java backend API<br />
 
 ## Description
 
-*Since the LTS(5.0.2) of Spring data Elastic Search haven't support search template features(https://github.com/spring-projects/spring-data-elasticsearch/issues/1891)
-*This project used upcoming major version 5.1.0-M2 instead.
-*I created a demo template with three params(name, page, size) to query.
+*Since the current(5.0.2)version of Spring data Elastic Search haven't support search template features(https://github.com/spring-projects/spring-data-elasticsearch/issues/1891)<br />
+*This project used upcoming major version 5.1.0-M2 instead.<br />
+*I created a demo template with three params(name, page, size) to query.<br />
 ```
 {
   "script": {
