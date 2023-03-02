@@ -28,6 +28,8 @@ To make use of Elastic Search Template in Java backend API<br />
   }
 }
 ```
-API example:
+## API:
+localhost:8080/search/{name}<br />
+sample:<br />
 localhost:8080/search?page=1&size=1
 
