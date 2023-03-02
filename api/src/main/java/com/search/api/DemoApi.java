@@ -20,6 +20,6 @@ public class DemoApi {
     public ResponseEntity<List<Demo>> query(@PathVariable String name,
                                             @RequestParam(defaultValue = "0") int page,
                                             @RequestParam(defaultValue = "2") int size) {
-        return new ResponseEntity<List<Demo>>(demoService.query(name, page, size), HttpStatus.OK);
+        return new ResponseEntity<>(demoService.query(name, page, size), HttpStatus.OK);
     }
 }
