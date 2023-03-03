@@ -28,6 +28,32 @@ To make use of Elastic Search Template in Java backend API<br />
   }
 }
 ```
+# Core Logic 
+https://github.com/ToAotao/SearchTemplateDemo/blob/master/dao/src/main/java/com/search/dao/impl/DemoRepositoryImpl.java 
+```
+  @Override
+  public SearchPage<Person> findByFirstNameWithSearchTemplate(String firstName, Pageable pageable) {
+    var query = SearchTemplateQuery.builder()                               <.>
+      .withId("person-firstname") //template name                           <.>
+      .withParams(
+        Map.of(                                                             <.>                             
+          "firstName", firstName,
+          "from", pageable.getOffset(),
+          "size", pageable.getPageSize()
+          )
+      )
+      .build();
+    SearchHits<Person> searchHits = operations.search(query, Person.class); <.>
+    return SearchHitSupport.searchPageFor(searchHits, pageable);
+  }
+}
+----
+<.> Create a `SearchTemplateQuery`
+<.> Provide the id of the search template
+<.> The parameters are passed in a `Map<String,Object>`
+<.> Do the search in the same way as with the other query types.
+====
+```
 ## API:
 localhost:8080/search/{name}<br />
 sample:<br />
