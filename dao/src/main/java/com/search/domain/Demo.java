@@ -11,6 +11,8 @@ import org.springframework.data.elasticsearch.annotations.FieldType;
 public class Demo {
     @Id
     private String id;
+    @Field(name = "d_id", type = FieldType.Long)
+    private Long d_id;
     @Field(type = FieldType.Text)
     private String name;
     @Field(type = FieldType.Text)
