@@ -52,6 +52,8 @@ https://github.com/ToAotao/SearchTemplateDemo/blob/master/dao/src/main/java/com/
 <.> Provide the id of the search template
 <.> The parameters are passed in a `Map<String,Object>`
 <.> Do the search in the same way as with the other query types.
+
+To use credential edit the elastic search config client under service module 
 ====
 ```
 ## API:
